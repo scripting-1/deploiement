@@ -19,8 +19,8 @@ RUN composer install
 # Donner les permissions nécessaires au répertoire de stockage de Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Exposer le port 80 pour accéder à Apache
+# Exposer le port 80 pour Apache
 EXPOSE 80
 
-# Commande pour démarrer Laravel (Apache se chargera de servir l'application)
+# Commande pour démarrer Apache (assurez-vous que Apache utilise le port 80)
 CMD ["apache2-foreground"]
